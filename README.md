@@ -1,5 +1,7 @@
 # BioCatHub Mol Structure
 
+Microservice that converts SMILES codes to structure SVGs.
+
 ## Installation
 
 - Install open babel 3: https://openbabel.org/wiki/Category:Installation
