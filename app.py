@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app, resources={r'/*':{'origins':'*'}})
 
 
-@app.route("/<smiles>", methods=["GET"])
+@app.route("/smiles/<smiles>", methods=["GET"])
 def convert_smiles_to_molecule_image(smiles):
     os.system('obabel -:"{}" -O molecule.svg'.format(smiles))
     svg = open("molecule.svg", "rb")
