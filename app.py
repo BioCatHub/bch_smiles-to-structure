@@ -2,8 +2,10 @@ import os
 
 from flask import Flask, send_file
 from cairosvg import svg2png
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources={r'/*':{'origins':'*'}})
 
 
 @app.route("/<smiles>", methods=["GET"])
@@ -15,4 +17,5 @@ def convert_smiles_to_molecule_image(smiles):
 
 
 if __name__ == '__main__':
-    app.run()
+    #app.run(debug=True, host='0.0.0.0', port=8000)
+    app.run(debug=True, port=5000)
